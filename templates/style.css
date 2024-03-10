@@ -317,10 +317,34 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     flex-wrap: wrap;
 }
 .project-container {
+    position: relative;
     width: calc(33.33% - 20px);                     /* Adjust width to fit three per row */
     height: calc(33.33vw - 20px);                   /* Set height to match the width, maintaining a square aspect ratio */
-    background: #00aeff;
+    background-color: #00aeff;
     padding: 10px;
-    margin: 10px; /* Add some space between items */
-    box-sizing: border-box; /* Include padding and border in the width calculation */
+    margin: 10px;                                   /* Add some space between items */
+    box-sizing: border-box;                         /* Include padding and border in the width calculation */
+}
+
+.project-container:hover  .project-container-overlay{
+    opacity: 1;
+}
+
+.project-container-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);         /* Semi-transparent black overlay */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;                                     /* Initially hidden */
+    transition: opacity 0.3s ease;                  /* Smooth transition */
+}
+
+.project-container-overlay-text {
+    text-align: center;
 }
