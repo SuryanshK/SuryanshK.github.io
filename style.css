@@ -1,0 +1,330 @@
+header {
+    position: relative;
+    min-height: 820px;
+    width: 100%;
+    background: url(../assets/Alpines.jpeg);
+    -webkit-background-size: cover !important;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last parameter) to change the darkness */
+}
+body {
+    background: #fff;
+    font-family: 'opensans-regular', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    color: rgb(190, 253, 246);
+    -webkit-font-smoothing: antialiased;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+li {
+    line-height: 18px;
+    text-align: match-parent;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Remove margin and padding for specific elements */
+/* h1, h2, h3, h4, h5, h6, div {
+    margin: 0;
+    padding: 0;
+} */
+h1 {
+    color: rgb(28, 206, 215);
+    font-size: 3.5rem;
+}
+h2 {
+    color: rgb(179, 230, 234);
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 12px;
+    padding-top: 24px;
+    text-align: center;
+}
+h3, body {
+    color: rgb(190, 253, 246);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+button, button:visited {
+    font: 16px 'opensans-bold', sans-serif;
+    background: #11ABB0;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    width: 250px;
+}
+button:hover {
+    background-color: rgb(28, 206, 215);
+}
+strong, b {
+    font: 15px/30px 'opensans-bold', sans-serif;
+}
+/* the main text inside header */
+.name {
+    font-size: 85.9px;
+    font: 'opensans-bold', serif;
+    letter-spacing: -1px;
+    margin: 0 auto 12px auto;
+}
+.designations {
+    font: 'liberbaskerville-regular', serif;
+    color: white;
+    margin: 64px auto;
+    width: 70%;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .5);
+}
+.name, .designations {
+    color: white;
+    position: relative;
+}
+/* wrapper of the navbar */
+#nav-wrap {
+    font: 12px 'opensans-bold', sans-serif;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin: 0 auto;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+ul#nav {
+    min-height: 48px;
+    width: auto;
+    text-align: center;
+}
+/* every thing under nav-warp */
+ul#nav li {                                         /* list items under nav */
+    position: relative;
+    list-style: none;
+    height: 48px;
+    display: inline-block;
+    margin-right: 40px;
+    font-size: medium;
+}
+ul#nav li a {                                       /* a tags under nav */
+    display: inline-block;
+    padding: 8px 13px;
+    margin-top: 20px;
+    line-height: 32px;
+    text-decoration: none;
+    text-align: left;
+    color: #fff;
+    -webkit-transition: color .2s ease-in-out;
+    -moz-transition: color .2s ease-in-out;
+    -o-transition: color .2s ease-in-out;
+    -ms-transition: color .2s ease-in-out;
+    transition: color .2s ease-in-out;
+}
+ul#nav li.current a {                               /* a tags under nav; the CURRENT ONE */
+    color: #00aeff;
+}
+#ul {
+    list-style: none outside;
+}
+
+.section {
+    /* margin: 0 0 0 0; */
+    padding: 0 0 0 0;
+    display: flexbox;
+    background-color: rgb(29, 28, 28);
+}
+
+/* other things in header */
+.links {
+    list-style: none;
+}
+.links li {
+    display: inline-block;
+    margin-right: 64px;
+}
+.links img {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+/* introduction */
+#intro-paragraph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about-me-content {
+    max-width: 64%;;
+}
+.about-me-content img {                     /* rem := root element, so 2rem = 2 * attrib ute of root element/tag */
+    height: 12rem;
+    width: 12rem;
+    border: 1px solid #F06000;
+    border-radius: 50%;
+    margin: 2.5rem 1rem 0 2rem;
+    float: left;
+}
+#about-me-text {
+    font-family: "lora-regular", serif;
+    font-size: 2rem;
+    line-height: 1.7;
+    color: #888888;
+}
+
+/* profile, skills container */
+.sub-section-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 70%;
+    margin: auto;
+    padding-top: 20px;
+}
+.sub-section {
+    max-width: 40%;
+}
+/* profile and skills */
+#profile-text, #skills-text {
+    font-family: "lora-regular", serif;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #888888;
+}
+.my-info-list {
+    padding-inline-start: 0;
+}
+.my-info-list li {
+    list-style: none;
+}
+.my-info-list li strong {
+    font-family: 'opensans-bold', sans-serif;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 1.25rem;
+    line-height: 3rem;
+}
+.my-info-list li span {
+    display: block;
+    font-family: 'opensans-bold', sans-serif;
+    color: #888888;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* displayed skill progress */
+.skill-bars {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.skill-bars li {
+    margin-bottom: 2rem;
+    position: relative;
+}
+.progression {
+    background: #313131;
+    height: .6rem;
+    position: relative;
+}
+.progression-bar {
+    background: #ddd;
+    height: 100%;
+}
+.skill-name {
+    margin-top: 1rem;
+    font-size: large;
+    font-family: 'Roboto Mono', monospace;
+}
+.skill-percent {
+    position: absolute;
+    top: -2rem;                                         /* Adjust as needed */
+    right: calc(0%);                                    /* Adjust as needed */
+    display: block;
+    padding: 0.5rem;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    opacity: 0;                                         /* Initially hide the tooltip */
+    transition: opacity 0.3s ease;                      /* Add a transition effect */
+}
+.skill-bars li:hover .skill-percent {
+    opacity: 1;
+}
+.skill-percent::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    border: 8px solid transparent;
+    border-top-color: #555;
+}
+/* Adjust width according to skill percentage */
+.percent90 .progression-bar {
+    width: 90%;
+}
+.percent70 .progression-bar {
+    width: 70%;
+}
+.percent60 .progression-bar {
+    width: 60%;
+}
+/* buttons for hiring */
+.buttons-for-hiring-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 40%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* projects */
+.project-listings {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.project-container {
+    width: calc(33.33% - 20px);                     /* Adjust width to fit three per row */
+    height: calc(33.33vw - 20px);                   /* Set height to match the width, maintaining a square aspect ratio */
+    background: #00aeff;
+    padding: 10px;
+    margin: 10px; /* Add some space between items */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.project-container:hover {
+    
+}
