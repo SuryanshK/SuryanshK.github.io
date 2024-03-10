@@ -30,6 +30,15 @@ img {
     max-width: 100%;
     height: auto;
 }
+li {
+    line-height: 18px;
+    text-align: match-parent;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 /* Remove margin and padding for specific elements */
 /* h1, h2, h3, h4, h5, h6, div {
     margin: 0;
@@ -42,6 +51,10 @@ h1 {
 h2 {
     color: rgb(179, 230, 234);
     font-size: 3rem;
+    margin: 0;
+    margin-bottom: 12px;
+    padding-top: 24px;
+    text-align: center;
 }
 h3, body {
     color: rgb(190, 253, 246);
@@ -49,6 +62,35 @@ h3, body {
 html, body {
     margin: 0;
     padding: 0;
+}
+button, button:visited {
+    font: 16px 'opensans-bold', sans-serif;
+    background: #11ABB0;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    width: 250px;
+}
+button:hover {
+    background-color: rgb(28, 206, 215);
+}
+strong, b {
+    font: 15px/30px 'opensans-bold', sans-serif;
 }
 /* the main text inside header */
 .name {
@@ -159,4 +201,126 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     line-height: 1.7;
     color: #888888;
 }
-/* profile */
+
+/* profile, skills container */
+.sub-section-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 70%;
+    margin: auto;
+    padding-top: 20px;
+}
+.sub-section {
+    max-width: 40%;
+}
+/* profile and skills */
+#profile-text, #skills-text {
+    font-family: "lora-regular", serif;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #888888;
+}
+.my-info-list {
+    padding-inline-start: 0;
+}
+.my-info-list li {
+    list-style: none;
+}
+.my-info-list li strong {
+    font-family: 'opensans-bold', sans-serif;
+    color: #313131;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 1.25rem;
+    line-height: 3rem;
+}
+.my-info-list li span {
+    display: block;
+    font-family: 'opensans-bold', sans-serif;
+    color: #888888;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+/* displayed skill progress */
+.skill-bars {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+.skill-bars li {
+    margin-bottom: 2rem;
+    position: relative;
+}
+.progression {
+    background: #313131;
+    height: .6rem;
+    position: relative;
+}
+.progression-bar {
+    background: #ddd;
+    height: 100%;
+}
+.skill-name {
+    margin-top: 1rem;
+    font-size: large;
+    font-family: 'Roboto Mono', monospace;
+}
+.skill-percent {
+    position: absolute;
+    top: -2rem;                                         /* Adjust as needed */
+    right: calc(0%);                                    /* Adjust as needed */
+    display: block;
+    padding: 0.5rem;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    opacity: 0;                                         /* Initially hide the tooltip */
+    transition: opacity 0.3s ease;                      /* Add a transition effect */
+}
+.skill-bars li:hover .skill-percent {
+    opacity: 1;
+}
+.skill-percent::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 10px;
+    border: 8px solid transparent;
+    border-top-color: #555;
+}
+/* Adjust width according to skill percentage */
+.percent90 .progression-bar {
+    width: 90%;
+}
+.percent70 .progression-bar {
+    width: 70%;
+}
+.percent60 .progression-bar {
+    width: 60%;
+}
+/* buttons for hiring */
+.buttons-for-hiring-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 40%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* projects */
+.project-listings {
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.project-container {
+    width: calc(33.33% - 20px);                     /* Adjust width to fit three per row */
+    height: calc(33.33vw - 20px);                   /* Set height to match the width, maintaining a square aspect ratio */
+    background: #00aeff;
+    padding: 10px;
+    margin: 10px; /* Add some space between items */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
