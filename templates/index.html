@@ -7,21 +7,29 @@
     <link rel="stylesheet" href="style.css">
     <!-- java script -->
     <script src="script.js" defer></script>
+    <!-- libraries -->
     <title> Suryansh's Personal Website</title>
 </head>
 <body>
     <!-- intro header section -->
-    <header>
+    <header id="start-page">
         <div class="overlay">
             <!-- navbar -->
             <nav id="nav-wrap" class style="display: block">
                 <ul id="nav" class="nav">
                     <li>
-                        Home
+                        <a class="smooth-scroll" href="#start-page">
+                            Home
+                        </a>
                     </li>
                     <li>
                         <a class="smooth-scroll" href="#about-me">
                             About
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-scroll" href="#projects">
+                            Projects
                         </a>
                     </li>
                     <li>
@@ -170,6 +178,9 @@
                         </div>
                         <div class="project-container-overlay-text-technology">
                             To-Do App
+                        </div>
+                        <div class="project-container-overlay-text-details">
+                            Created an iOS application for tracking tasks and due dates, complete with a calender and reminders features.
                         </div>
                     </div>
                 </div>
@@ -336,9 +347,32 @@
         <h2>Contact</h2>
         <h1>I'd Love To Connect With You.</h1>
         <h4>Let me get to know more about you.</h4>
-        <div class="contact-options">
-
+        <div class="contact-banner">
+            <div class="contact-method-container" id="contact-method-email">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4>
+                    Email Me At
+                </h4>
+                <a href="mailto:suryansh.khranger@gmail.com">
+                    suryansh.khranger@gmail.com
+                </a>
+            </div>
+            <div class="contact-method-container" id="contact-method-instagram"></div>
+            <div class="contact-method-container" id="contact-method-linkedIn">
+                <div class="icon">
+                    <i class="icon-linkedin">
+                    </i>
+                </div>
+                <h4>
+                    Let's Connect
+                </h4>
+                <a href="www.linkedin.com/in/suryansh-khranger-1806b5249">
+                    LinkedIn Profile
+                </a>
+            </div>
         </div>
-    </div>    
+    </div>
 </body>
 </html>

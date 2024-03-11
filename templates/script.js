@@ -1,5 +1,41 @@
+// smooth scrolling function
+function smoothScroll(target, duration) {
+    var targetElement = document.querySelector(target);
+    var targetPosition = targetElement.offsetTop;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var scrollAmount = Math.floor(easeInOutQuad(timeElapsed, startPosition, distance, duration));
+        window.scrollTo(0, scrollAmount);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+// Add click event listeners to navigation links
+document.querySelectorAll('.smooth-scroll').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent default behavior
+        var targetId = link.getAttribute('href'); // Get target section id
+        var duration = 1000; // Set duration of scroll (in milliseconds)
+        smoothScroll(targetId, duration); // Call smoothScroll function
+    });
+});
+
 // Add a click event listener to each project container
-document.querySelectorAll('.project-container').forEach(item => {
+document.querySelectorAll('.project-container').forEach((item, index) => {
     item.addEventListener('click', event => {
         // Get the overlay element
         const overlay = document.getElementById('overlay');
@@ -13,22 +49,28 @@ document.querySelectorAll('.project-container').forEach(item => {
         // Clear existing content in the overlay content container
         overlayContent.innerHTML = '';
         
+        // Define an array of image URLs for each project
+        const imageUrls = [
+            '../assets/project_images_videos/ToDo_List_screenshot1.png',
+            'url/to/your/image2.jpg',
+            'url/to/your/image3.jpg',
+            // Add URLs for each project's background image
+            '../assets/website-img.png',
+            'url/to/your/image5.jpg',
+            'url/to/your/image6.jpg',
+        ];
+
         // Get data from the clicked project container
         const projectData = {
             title: event.currentTarget.querySelector('.project-container-overlay-text-title').textContent,
             technology: event.currentTarget.querySelector('.project-container-overlay-text-technology').textContent,
-            // Add more data properties as needed
-            // information: event.currentTarget.querySelector('.project-container-overlay-text-details').textContent
-            information: event.currentTarget.querySelector('.project-container-overlay-text-details') ? event.currentTarget.querySelector('.project-container-overlay-text-details').textContent : ''
+            information: event.currentTarget.querySelector('.project-container-overlay-text-details') ? event.currentTarget.querySelector('.project-container-overlay-text-details').textContent : '',
+            imageUrl: imageUrls[index]  // Use the corresponding URL for the current project
         };
-        
-        // Create a new element for the expanded display
-        // no need, just use overlay-content
         
         // Customize the content of the overlay-content based on the data
         overlayContent.innerHTML = `
-            <!-- TODO: currently, i have the project-extended-display-images-banner set to be the image of the website project and this will apply to all projects... fix it -->
-            <div class="project-extended-display-images-banner"></div>
+            <div class="project-extended-display-images-banner" style="background-image: url(${projectData.imageUrl});"></div>
             <div class="project-extended-display-details">
                 <h2>${projectData.title}</h2>
                 <h3>${projectData.technology}</h3>
@@ -46,6 +88,7 @@ document.querySelectorAll('.project-container').forEach(item => {
         });
     });
 });
+
 
 // closing the expanded display
 // Hide the overlay when clicked outside of it

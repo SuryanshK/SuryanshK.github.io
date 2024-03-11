@@ -47,6 +47,7 @@ li {
 h1 {
     color: rgb(28, 206, 215);
     font-size: 3.5rem;
+    text-align: center;
 }
 h2 {
     color: rgb(179, 230, 234);
@@ -58,6 +59,10 @@ h2 {
 }
 h3, body {
     color: rgb(190, 253, 246);
+}
+h4 {
+    color: rgb(105, 207, 241);
+    text-align: center;
 }
 html, body {
     margin: 0;
@@ -307,6 +312,11 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     margin: auto;
     padding-top: 20px;
 }
+.button-for-hiring {
+    font-size: large;
+    font-weight: bold;
+    height: 72px;
+}
 
 /* projects */
 .project-listings {
@@ -378,7 +388,7 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 }
 /* project background images */
 .project-image1 {
-    background-image: url(../assets/);
+    background-image: url(../assets/project_images_videos/to_do_icon.png);
 }
 .project-image2 {
     background-image: url(../assets/);
@@ -430,7 +440,7 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     height: 52%;
     padding: 0;
     border-radius: 8px 8px 0 0;
-    background: url(../assets/website-img.png);
+    /* background: url(../assets/website-img.png); */
     background-size: cover;
     margin: 0 0 0 0;
 }
@@ -441,6 +451,7 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     height: 36%;
     padding: 0;
     margin-left: 8px;
+    margin-right: 8px;
 }
 
 .project-extended-display-details h2, h3, p {
@@ -476,4 +487,22 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 
 .close-expanded-display:hover {
     text-decoration: underline;
+}
+
+/* contact */
+.contact-banner {
+    display: flex;
+    justify-content: space-around;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+.contact-method-container {
+    min-width: (80% / 3) - 10px;
+}
+.icon-mail::before {
+    content: '\e806';
+}
+.contact-method-container h4 {
+    font-size: 1.5rem;
 }
