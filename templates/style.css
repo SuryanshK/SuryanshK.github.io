@@ -391,7 +391,7 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     background-image: url(../assets/project_images_videos/to_do_icon.png);
 }
 .project-image2 {
-    background-image: url(../assets/);
+    background-image: url(../assets/project_images_videos/Client_interaction_Trackers_screenshot_1.png);
 }
 .project-image3 {
     background-image: url(../assets/);
@@ -404,6 +404,10 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 }
 .project-image6 {
     background-image: url(../assets/);
+}
+/* project videos */
+.project-demo-video1 {
+    display: none;
 }
 /* click */
 .project-listings .overlay {
@@ -487,6 +491,65 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 
 .close-expanded-display:hover {
     text-decoration: underline;
+}
+
+/* education */
+.timeline-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: 20px;                                       /* Add some margin to separate from the heading */
+    min-height: fit-content;
+}
+
+.timeline-line {
+    position: inherit;
+    display: flex;                                          /* Use flexbox to evenly space out points */
+    flex-direction: column;                                 /* without this, they would be right next to each-other like *** */
+    top: 0;                                                 /* work around for height: 100% */
+    bottom: 0;                                              /* work around for height: 100% */
+    border-left: 2px solid #ccc;                          /* Adjust thickness and color as needed */
+    margin-left: -1px;
+    align-items: center;                                    /* Align points vertically in the middle of the line */
+}
+
+.timeline-point {
+    width: 10px;                                            /* Adjust size as needed */
+    height: 10px;                                           /* Adjust size as needed */
+    background-color: #ccc;                               /* Adjust color as needed */
+    border-radius: 50%;                                     /* Ensure a round shape */
+    left: 50%;                                              /* Position the point horizontally in the center of the line */
+    transform: translateX(-50%);                            /* Adjust the point's position to center it horizontally */
+    cursor: pointer;
+    /* Additional styles for positioning the points */
+    /* flex: 1;                                                Distribute available space evenly among points */
+    margin-top: 60px;                                       /* Adjust vertical spacing if needed */
+}
+
+.timeline-point:first-child {
+    margin-top: 36px;
+}
+
+.timeline-event {
+    /* i want it to be hiddent, but then itll collapse the section....
+    i guess its fine since 1 will always be active regardless, but still */
+}
+
+.timeline-event.active {
+    display: block;
+}
+
+.education-level {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.education-date {
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 /* contact */

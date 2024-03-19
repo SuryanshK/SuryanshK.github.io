@@ -52,20 +52,31 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
         // Define an array of image URLs for each project
         const imageUrls = [
             '../assets/project_images_videos/ToDo_List_screenshot1.png',
-            'url/to/your/image2.jpg',
+            '../assets/project_images_videos/Client_interaction_Trackers_screenshot_1.png',
             'url/to/your/image3.jpg',
             // Add URLs for each project's background image
             '../assets/website-img.png',
             'url/to/your/image5.jpg',
             'url/to/your/image6.jpg',
         ];
+        const videoURLS = [
+            '../assets/project_images_videos/ToDo_List_recording.mov',
+            'url/to/your/video2.jpg',
+            'url/to/your/video3.jpg',
+            'url/to/your/video4.jpg',
+            'url/to/your/video5.jpg',
+            'url/to/your/video6.jpg',
+        ];
+
+        // TODO: Not every project will have a demo video, so do something about this...
 
         // Get data from the clicked project container
         const projectData = {
             title: event.currentTarget.querySelector('.project-container-overlay-text-title').textContent,
             technology: event.currentTarget.querySelector('.project-container-overlay-text-technology').textContent,
             information: event.currentTarget.querySelector('.project-container-overlay-text-details') ? event.currentTarget.querySelector('.project-container-overlay-text-details').textContent : '',
-            imageUrl: imageUrls[index]  // Use the corresponding URL for the current project
+            imageUrl: imageUrls[index],                                                                 // Use the corresponding URL for the current project
+            videoURL: videoURLS[index]
         };
         
         // Customize the content of the overlay-content based on the data
@@ -78,6 +89,7 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
             </div>
             <div class="project-extended-display-footer">
                 <a class="close-expanded-display">Close</a>
+                <a href="${projectData.videoUrl}" target="_blank">Watch Demo Video</a>                  <!-- Add the video link -->
             </div>
         `;
 

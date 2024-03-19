@@ -73,6 +73,10 @@
                     </a>
                 </li>
             </div>
+            <!-- scroll down button -->
+            <div class="scroll-down-button-container">
+                <a class="smooth-scroll" href="#about-me"></a>
+            </div>
         </div>
     </header>
     
@@ -173,6 +177,10 @@
             <div class="project-container project-image1" id="">
                 <div class="project-container-overlay">
                     <div class="project-container-overlay-text">
+                        <video controls class="project-demo-video1">
+                            <source src="../assets/project_images_videos/ToDo_List_recording.mov" type="video/mov">
+                            Your browser does not support the video tag.
+                        </video>
                         <div class="project-container-overlay-text-title">
                             Task Tracker
                         </div>
@@ -198,10 +206,13 @@
                 <div class="project-container-overlay">
                     <div class="project-container-overlay-text">
                         <div class="project-container-overlay-text-title">
-                            project name
+                            Client Manager
                         </div>
                         <div class="project-container-overlay-text-technology">
-                            project technology
+                            Web Application
+                        </div>
+                        <div class="project-container-overlay-text-details">
+                            Created a web-based application for tracking interactions, payments, and cash flow for a business and its clients.
                         </div>
                     </div>
                 </div>
@@ -210,7 +221,7 @@
                 </div>
                 <div class="project-item">
                     <div class="project-item-wrapper">
-                        <img src="" alt="">
+                        <img src="" alt="">                        
                     </div>
                 </div>
             </div>
@@ -312,33 +323,53 @@
     </div>
 
     <!-- education section -->
-    <div class="section" id="education">
+    <div class="section" id="education" style="min-height: fit-content;">
         <h2>
             Background Education
         </h2>
-        <div>
-            <h3 class="education-level">
-                Bachelor Degree
-            </h3>
-            <h4 class="education-date">
-                September 2022 - May 2026
-            </h4>
-        </div>
-        <div>
-            <h3 class="education-level">
-                International Baccalaureate Diploma Programme
-            </h3 class="education-level">
-            <h4 class="education-date">
-                September 2020 - May 2022
-            </h4>
-        </div>
-        <div>
-            <h3 class="education-level">
-                High School Degree
-            </h3 class="education-level">
-            <h4 class="education-date">
-                September 2019 - May 2022
-            </h4>
+        <div class="timeline-container">
+            <!-- left side of timeline -->
+            <div class="sub-section-container" style="max-width: 100%;">
+                <div class="sub-section" id="timeline-date">
+
+                </div>
+            </div>
+            <!-- timeline line -->
+            <div class="timeline-line">
+                <div class="timeline-point" data-event="event1"></div>
+                <div class="timeline-point" data-event="event2"></div>
+                <div class="timeline-point" data-event="event3"></div>
+            </div>
+
+            <!-- right side of timeline -->
+            <div class="sub-section-container" style="max-width: 100%;">
+                <div class="sub-section" id="timeline-info" style="max-width: 100%;">
+                    <div class="timeline-event">
+                        <h3 class="education-level">
+                            Bachelor Degree
+                        </h3>
+                        <h4 class="education-date">
+                            September 2022 - May 2026
+                        </h4>
+                    </div>
+                    <div class="timeline-event">
+                        <h3 class="education-level">
+                            International Baccalaureate Diploma Programme
+                        </h3 class="education-level">
+                        <h4 class="education-date">
+                            September 2020 - May 2022
+                        </h4>
+                    </div>
+                    <div class="timeline-event">
+                        <h3 class="education-level">
+                            High School Degree
+                        </h3 class="education-level">
+                        <h4 class="education-date">
+                            September 2019 - May 2022
+                        </h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
