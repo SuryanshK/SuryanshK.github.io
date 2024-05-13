@@ -34,6 +34,17 @@ document.querySelectorAll('.smooth-scroll').forEach(link => {
     });
 });
 
+// Add click event listeners for the downlaod CV button
+document.getElementById("download-cv-button").addEventListener("click", function() {
+    console.log("download CV button clicked");
+    var link = document.createElement('a');                                                                             // Create an anchor element
+    link.href = "https://github.com/SuryanshK/SuryanshK.github.io/raw/main/assets/most_recent_resume/Suryansh%20Khranger%20-%20Resume.pdf";                       // Set the href attribute to the path of your resume file
+    link.download = 'Resume.pdf';                                                                                       // Set the download attribute to force the browser to download the file
+    document.body.appendChild(link);                                                                                    // Append the anchor element to the document body
+    link.click();                                                                                                       // Trigger a click event on the anchor element
+    document.body.removeChild(link);                                                                                    // Remove the anchor element from the document body
+});
+
 // Add a click event listener to each project container
 document.querySelectorAll('.project-container').forEach((item, index) => {
     item.addEventListener('click', event => {
@@ -50,10 +61,10 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
         overlayContent.innerHTML = '';
         
         // Define an array of image URLs for each project
-        const imageUrls = [
-            '../assets/project_images_videos/ToDo_List_screenshot1.png',
+        const imageUrls = [                     // These are displayed in the overlay screen
+            '../assets/project_images_videos/ToDo_List/ToDo_List_screenshot1.png',
             '../assets/project_images_videos/Client_interaction_Trackers_screenshot_1.png',
-            'url/to/your/image3.jpg',
+            '../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png',       // TODO: change this...
             // Add URLs for each project's background image
             '../assets/website-img.png',
             'url/to/your/image5.jpg',
