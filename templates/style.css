@@ -180,6 +180,36 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 .links img {
     max-width: 64px;
     max-height: 64px;
+    transition: filter 0.3s;
+}
+.links img:hover {
+    filter: invert(80%) sepia(100%) saturate(500%) hue-rotate(180deg); /* Change color using CSS filter */
+}
+.scroll-down-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#scroll-down-button {
+    display: inline-block; /* Change to inline-block */
+    background-color: transparent;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    line-height: 48px; /* Set line-height equal to height */
+    text-align: center; /* Center the content horizontally */
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    right: 50%;
+    cursor: pointer;
+}
+#scroll-down-button img {
+    vertical-align: middle; /* Vertically center the image */
+}
+#scroll-down-button:hover {
+    background-color: #ccc;
+    transition-duration: 0.3s;
 }
 
 /* introduction */
@@ -388,13 +418,13 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 }
 /* project background images */
 .project-image1 {
-    background-image: url(../assets/project_images_videos/to_do_icon.png);
+    background-image: url(../assets/project_images_videos/ToDo_List/to_do_icon.png);
 }
 .project-image2 {
     background-image: url(../assets/project_images_videos/interaction_icon.png);
 }
 .project-image3 {
-    background-image: url(../assets/);
+    background-image: url(../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png);
 }
 .project-image4 {
     background-image: url(../assets/website-img.png);
