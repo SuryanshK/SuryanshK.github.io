@@ -99,28 +99,35 @@ section {
 }
 
 .scrolling-list {
+    display: flex;
     overflow-x: auto;
     white-space: nowrap;
+    margin: 8px auto;
+    margin-left: 20px;
     padding: 10px 0;
+    gap: 40px;                                          /* Adjust the gap as needed */
 }
 
 .item {
     display: inline-block;
     margin-right: 10px;
     text-align: center;
+    gap: 20px;
 }
 
 .item img {
     display: block;
     margin: 0 auto;
-    width: 50px; /* Adjust size as needed */
-    height: 50px; /* Set the height to match the width */
-    object-fit: contain; /* Maintain aspect ratio and fit the image within the dimensions */
+    margin-top: 12px;
+    margin-bottom: 12px;
+    width: 56px;                                        /* Adjust size as needed */
+    height: 56px;                                       /* Set the height to match the width */
+    object-fit: contain;                                /* Maintain aspect ratio and fit the image within the dimensions */
 }
 
 
 .item span {
-    display: block; /* Ensure the text is on a new line */
+    display: block;                                     /* Ensure the text is on a new line */
 }
 
 
@@ -130,6 +137,40 @@ section {
     font-style: italic;
     min-height: 1em;                    /* To keep the designation text line open even wehn theres no text */
 }
+
+.cycling-element-container {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;                      /* Use flexbox to align elements horizontally */
+    flex-direction: row;                /* Stack items vertically */
+    align-items: center;                /* Vertically center align items */
+    margin-top: 20px;                   /* Adjust margin as needed */
+    margin-right: 20px;                   /* Adjust margin as needed */
+    width: 60%;
+}
+
+.cycling-element {
+    width: 100%;                         /* Adjust the width as needed */
+    max-height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cycling-element img {
+    max-width: 100%;
+    max-height: 100%;                  
+    height: auto;
+    filter: blur(5px);                 /* Initially blur all images */
+    transition: filter 0.5s;           /* Smooth transition for blur effect */
+}
+
+.cycling-element img.active {
+    filter: blur(0);                   /* Unblur the active image */
+}
+
 
 /* Contact Section */
 #contact p {

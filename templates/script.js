@@ -1,4 +1,5 @@
 // Dynamic content for the About section
+// Designation text changer
 document.addEventListener('DOMContentLoaded', function () {
     const designations = ["A Python Programmer", "An Artificial Intelligence Expert", "A Machine Learning Engineer"];
     const designationElement = document.querySelector('.designation');                      // Using querySelector for class selection
@@ -41,13 +42,43 @@ document.addEventListener('DOMContentLoaded', function () {
         // Start by deleting characters of the current designation
         deleteCharacters(currentText.length - 1);
     }
-    
 
     // Update the designation every 2 seconds
     setInterval(updateDesignation, 3000);
 });
 
+// Image cycling element
+document.addEventListener('DOMContentLoaded', function () {
+    const cyclingElement = document.querySelector('.cycling-element');
+    const images = cyclingElement.querySelectorAll('img');
+    let centerIndex = Math.floor(images.length / 2);                                    // Start with the middle image as the center
 
+    function updateImages() {
+        images.forEach((img, i) => {
+            const offset = i - centerIndex;
+            const scale = Math.abs(offset) === 0 ? 1 : 0.8;                             // Center image has scale 1, others have scale 0.8
+            const opacity = Math.abs(offset) === 0 ? 1 : 0.5;                           // Center image is fully opaque, others are semi-transparent
+            const blur = Math.abs(offset) === 0 ? 0 : 5 * Math.abs(offset);             // Center image has no blur, others have increasing blur
+            img.style.transform = `translateX(${offset * 100}%) scale(${scale})`;       // Translate images horizontally
+            img.style.opacity = opacity;                                                // Set opacity
+            img.style.filter = `blur(${blur}px)`;                                       // Apply blur
+        });
+    }
+
+    function cycleImages() {
+        centerIndex = (centerIndex + 1) % images.length;                                // Move to the next image in sequence
+        updateImages();
+    }
+
+    setInterval(cycleImages, 2000);                                                     // Change image every 2 seconds
+});
+
+
+
+
+
+
+// navbar
 // Smooth scrolling function
 function smoothScroll(target, duration) {
     const targetElement = document.querySelector(target);
