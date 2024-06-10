@@ -1,392 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css  -->
+    <title>Suryansh Khranger - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- java script -->
     <script src="script.js" defer></script>
-    <!-- libraries -->
-    <title> Suryansh's Personal Website</title>
 </head>
+
 <body>
-    <!-- intro header section -->
-    <header id="start-page">
-        <div class="overlay">
-            <!-- navbar -->
-            <nav id="nav-wrap" class style="display: block">
-                <ul id="nav" class="nav">
-                    <li> <a class="smooth-scroll" href="#start-page"> Home </a> </li>
-                    <li> <a class="smooth-scroll" href="#about-me"> About </a> </li>
-                    <li> <a class="smooth-scroll" href="#projects"> Projects </a> </li>
-                    <li> <a class="smooth-scroll" href="#education"> Education </a> </li>
-                    <li> <a class="smooth-scroll" href="#contact"> Contact </a> </li>
-                </ul>
-                <hr>
-            </nav>
-            <!-- end navbar -->
-
-            <!-- name  -->
-            <h1 class="name" style="padding-top: 260px;">           <!-- TODO: idk why i needed to put in this 160px tbh -->
-                Suryansh Khranger
-            </h1>
-            <!-- desginations -->
-            <h3 class="designations">
-                <span>Data Analyst</span> | <span>Machine Learning Engineer</span> | <span>Software Engineer</span>
-            </h3>
-            <!-- links to social -->
-            <!-- TODO: resize mail logo to match the other 2 -->
-            <div class="links">
-                <li>
-                    <a href="https://github.com/SuryanshK"> <img src="../assets/start_page_logos/social_links_logos/github-logo.png" alt=""> </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/suryansh-khranger-1806b5249/"> <img src="../assets/start_page_logos/social_links_logos/linkedin-logo.png" alt=""> </a>
-                </li>
-                <li>
-                    <a href="mailto:suryansh.khranger@gmail.com"> <img src="../assets/start_page_logos/social_links_logos/mail-logo.png" alt=""> </a>
-                </li>
-            </div>
-            <!-- scroll down button -->
-            <div class="scroll-down-button-container">
-                <div class="smooth-scroll" id="scroll-down-button">
-                    <a class="smooth-scroll" href="#about-me">
-                        <img src="../assets/scroll-down-arrow.png">
-                    </a>
-                </div>
-                <p style="position:absolute; right:0; bottom: 0; margin-right: 8px; color: rgba(164, 161, 161, 0.737);">Image Credits: ShutterStock Images</p>
-            </div>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="profile-picture">
+            <!-- Your profile picture here -->
         </div>
-    </header>
-    
-    <!-- about me section -->
-    <div class="section" id="about-me">
-        <div id="intro-paragraph">
-            <h2>About</h2>
-            <h1>Hi, I'm Suryansh</h1>
-            <div class="about-me-content">
-                <img src="../assets/pfp.jpg" alt="not-found" id="my-pic">
-                <p id="about-me-text">
-                    I'm an undergraduate computing science student at the University of Alberta with a focus on machine learning and Large Language Models (LLMs). I'm specializing in Artificial Intelligence and Deep Learning. My primary interests are Data Analysis and Deep Learning.
-            </div>
-        </div>
-    
-        <!-- parallel subsections -->
-        <div class="sub-section-container">
-            <div class="sub-section" id="profile">
-                <h2>Profile</h2>
-                <div id="profile-text">
-                    I am actively searching for job or internship oppertunities. If you think I would be a good fit for availible positions, please contact me via <a href="mailto:suryansh.khranger@gmail.com">suryansh.khranger@gmail.com</a>.
-                </div>
+        <!-- navbar -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume">Resume</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-                <ul class="my-info-list">
-                    <li>
-                        <strong>FULL NAME:</strong>
-                        <span>Suryansh Khranger</span>
-                    </li>
-                    <li>
-                        <strong>BIRTH DATE:</strong>
-                        <span>October 11, 2004</span>
-                    </li>
-                    <li>
-                        <strong>EMAIL ADDRESS:</strong>
-                        <span>suryansh.khranger@gmail.com</span>
-                    </li>
-                </ul>
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <div class="banner">
+                <h1>About</h1>
             </div>
-            
-            <div class="sub-section" id="technical-skills">
-                <h2>Skills</h2>
-                <p id="skills-text">
-                    The following is a breakdown of my technical skill set:
-                </p>
-                <!-- TODO: the bublle of skill-percent dont appear at the right locations -->
-                <ul class="skill-bars">
-                    <li class="percent90">
-                        <strong class="skill-name">MS SUITE</strong>
-                        <span class="skill-percent">90%</span>
-                        <div class="progression">
-                            <div class="progression-bar"></div>
-                        </div>
-                    </li>
-                    <li class="percent90">
-                        <strong class="skill-name">PYTHON</strong>
-                        <span class="skill-percent">90%</span>
-                        <div class="progression">
-                            <div class="progression-bar"></div>
-                        </div>
-                    </li>
-                    <li class="percent70">
-                        <strong class="skill-name">C / C++</strong>
-                        <span class="skill-percent">70%</span>
-                        <div class="progression">
-                            <div class="progression-bar"></div>
-                        </div>
-                    </li>
-                    <li class="percent60">
-                        <strong class="skill-name">SWIFT / OBJECTIVE-C</strong>
-                        <span class="skill-percent">60%</span>
-                        <div class="progression">
-                            <div class="progression-bar"></div>
-                        </div>
-                    </li>
-                </ul>
+            <div class="content">
+                <h2>Hi, I'm Suryansh Khranger</h2>
+                <p class="designation">A Python Programmer</p>
+                <p>This is a short description about myself.</p>
+                <p>Find me on <a href="#">GitHub</a> and <a href="#">LinkedIn</a>.</p>
             </div>
-        </div>
+        </section>
 
-        <!-- hiring buttons -->
-        <div class="buttons-for-hiring-container">
-            <button class="button-for-hiring">
-                Hire Me
-            </button>
-            <button class="button-for-hiring" id="download-cv-button">
-                Download CV
-            </button>
-        </div>
-    </div>
+        <!-- Experience Section -->
+        <section id="experience">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Experience</h1>
+            </div>
+            <!-- Section Content -->
+            <div class="content">
+                
+            </div>
+        </section>
 
-    <!-- projects section -->
-    <div class="section" id="projects">
-        <h2>
-            My Projects
-        </h2>
-        <div class="project-listings">
-            <!-- small containers -->
-            <!-- small container 1 -->
-            <div class="project-container project-image1" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <video controls class="project-demo-video1">
-                            <source src="../assets/project_images_videos/ToDo_List_recording.mov" type="video/mov">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="project-container-overlay-text-title">
-                            Task Tracker
-                        </div>
-                        <div class="project-container-overlay-text-technology">
-                            iOS Application
-                        </div>
-                        <div class="project-container-overlay-text-details">
-                            Created an iOS application for tracking tasks and due dates, complete with a calender and reminders features.
-                        </div>
-                    </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">                        
-                    </div>
-                </div>
+        <!-- Projects Section -->
+        <section id="projects">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Projects</h1>
             </div>
-            <!-- small container 2 -->
-            <div class="project-container project-image2" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <div class="project-container-overlay-text-title">
-                            Client Manager
+            <!-- Section Content -->
+            <div class="content">
+                <div class="project-listings">
+                    <!-- small containers -->
+                    <!-- small container 1 -->
+                    <div class="project-container project-image1" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <video controls class="project-demo-video1">
+                                    <source src="../assets/project_images_videos/ToDo_List_recording.mov" type="video/mov">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="project-container-overlay-text-title">
+                                    Task Tracker
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    iOS Application
+                                </div>
+                                <div class="project-container-overlay-text-details">
+                                    Created an iOS application for tracking tasks and due dates, complete with a calender and reminders features.
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-container-overlay-text-technology">
-                            Web Application
+                        <div class="project-container-overlay-text-plus">
+                            +
                         </div>
-                        <div class="project-container-overlay-text-details">
-                            Created a web-based application for tracking interactions, payments, and cash flow for a business and its clients.
-                        </div>
-                    </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">                        
-                    </div>
-                </div>
-            </div>
-            <!-- small container 3 -->
-            <div class="project-container project-image3" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <div class="project-container-overlay-text-title">
-                            Nutrilens AI
-                        </div>
-                        <div class="project-container-overlay-text-technology">
-                            iOS Application
-                        </div>
-                        <div class="project-container-overlay-text-details">
-                            Collaborated to develop an iOS application that uses Artificial Intelligence powered technology to provide photo analysis-based suggestions on meal preperation and ingredient safety.
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">                        
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- small container 4 -->
-            <div class="project-container project-image4" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <div class="project-container-overlay-text-title">
-                            Personal Website
+                    <!-- small container 2 -->
+                    <div class="project-container project-image2" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <div class="project-container-overlay-text-title">
+                                    Client Manager
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    Web Application
+                                </div>
+                                <div class="project-container-overlay-text-details">
+                                    Created a web-based application for tracking interactions, payments, and cash flow for a business and its clients.
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-container-overlay-text-technology">
-                            Web Development
+                        <div class="project-container-overlay-text-plus">
+                            +
                         </div>
-                        <div class="project-container-overlay-text-details">
-                            Created my own personal website for displaying projects, interests, and my resume.
-                        </div>
-                    </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- small container 5 -->
-            <div class="project-container project-image5" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <div class="project-container-overlay-text-title">
-                            project name
-                        </div>
-                        <div class="project-container-overlay-text-technology">
-                            project technology
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">                        
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">
-                    </div>
-                </div>
-            </div>
-            <!-- small container 6 -->
-            <div class="project-container project-image6" id="">
-                <div class="project-container-overlay">
-                    <div class="project-container-overlay-text">
-                        <div class="project-container-overlay-text-title">
-                            project name
+                    <!-- small container 3 -->
+                    <div class="project-container project-image3" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <div class="project-container-overlay-text-title">
+                                    Nutrilens AI
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    iOS Application
+                                </div>
+                                <div class="project-container-overlay-text-details">
+                                    Collaborated to develop an iOS application that uses Artificial Intelligence powered technology to provide photo analysis-based suggestions on meal preperation and ingredient safety.
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-container-overlay-text-technology">
-                            project technology
+                        <div class="project-container-overlay-text-plus">
+                            +
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="project-container-overlay-text-plus">
-                    +
-                </div>
-                <div class="project-item">
-                    <div class="project-item-wrapper">
-                        <img src="" alt="">
+                    <!-- small container 4 -->
+                    <div class="project-container project-image4" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <div class="project-container-overlay-text-title">
+                                    Personal Website
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    Web Development
+                                </div>
+                                <div class="project-container-overlay-text-details">
+                                    Created my own personal website for displaying projects, interests, and my resume.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-container-overlay-text-plus">
+                            +
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <!-- small container 5 -->
+                    <div class="project-container project-image5" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <div class="project-container-overlay-text-title">
+                                    project name
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    project technology
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-container-overlay-text-plus">
+                            +
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- small container 6 -->
+                    <div class="project-container project-image6" id="">
+                        <div class="project-container-overlay">
+                            <div class="project-container-overlay-text">
+                                <div class="project-container-overlay-text-title">
+                                    project name
+                                </div>
+                                <div class="project-container-overlay-text-technology">
+                                    project technology
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-container-overlay-text-plus">
+                            +
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item-wrapper">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- bigger displays -->
-            <div class="overlay" id="overlay">
-                <div class="overlay-content">
+                    <!-- bigger displays -->
+                    <div class="overlay" id="overlay">
+                        <div class="overlay-content">
 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- education section -->
-    <div class="section" id="education" style="min-height: fit-content;">
-        <h2>
-            Background Education
-        </h2>
-        <div class="timeline-container">
-            <!-- left side of timeline -->
-            <div class="sub-section-container" style="max-width: 100%;">
-                <div class="sub-section" id="timeline-date">
-
-                </div>
-            </div>
-            <!-- timeline line -->
-            <div class="timeline-line">
-                <div class="timeline-point" data-event="event1"></div>
-                <div class="timeline-point" data-event="event2"></div>
-                <div class="timeline-point" data-event="event3"></div>
-            </div>
-
-            <!-- right side of timeline -->
-            <div class="sub-section-container" style="max-width: 100%;">
-                <div class="sub-section" id="timeline-info" style="max-width: 100%;">
-                    <div class="timeline-event">
-                        <h3 class="education-level">
-                            Bachelor Degree
-                        </h3>
-                        <h4 class="education-date">
-                            September 2022 - May 2026
-                        </h4>
+                        </div>
                     </div>
-                    <div class="timeline-event">
-                        <h3 class="education-level">
-                            International Baccalaureate Diploma Programme
-                        </h3 class="education-level">
-                        <h4 class="education-date">
-                            September 2020 - May 2022
-                        </h4>
+                </div>          
+            <!-- Other -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Skills</h1>
+            </div>
+            <!-- Section Content -->
+            <!-- Language and databases -->
+            <div class="content">           
+                <h1>
+                    Languages and Databases
+                </h1>
+                <!-- scrolling list of items -->
+                <div class="scrolling-list">
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/python.png" alt="Python">
+                        <span>Python</span>
                     </div>
-                    <div class="timeline-event">
-                        <h3 class="education-level">
-                            High School Degree
-                        </h3 class="education-level">
-                        <h4 class="education-date">
-                            September 2019 - May 2022
-                        </h4>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/swift.png" alt="Swift">
+                        <span>Swift</span>
                     </div>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/c.png" alt="C">
+                        <span>C</span>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/html-5.png" alt="HTML5">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/css-3.png" alt="CSS3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/js.png" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/skills/Languages_Database/mongodb.png" alt="MongoDB">
+                        <span>MongoDB</span>
+                    </div>
+                    <!-- Add more items as needed -->
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <!-- contact section -->
-    <div class="section" id="contact">
-        <h2>Contact</h2>
-        <h1>I'd Love To Connect With You.</h1>
-        <h4>Let me get to know more about you.</h4>
-        <div class="contact-banner">
-            <div class="contact-method-container" id="contact-method-email">
-                <div class="icon">
-                    <i class="fas fa-envelope"></i>
+            <!-- Libraries -->
+            <div class="content">           
+                <h1>
+                    Libraries
+                </h1>
+                <!-- scrolling list of items -->
+                <div class="scrolling-list">
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="NumPy">
+                        <span>NumPy</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="Scikit-Learn">
+                        <span>Scikit-Learn</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="Pandas">
+                        <span>Pandas</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="OpenCV">
+                        <span>OpenCV</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="OpenAI API">
+                        <span>OpenAI API</span>
+                    </div>
+                    <!-- Add more items as needed -->
                 </div>
-                <h4>
-                    Email Me At
-                </h4>
-                <a href="mailto:suryansh.khranger@gmail.com">
-                    suryansh.khranger@gmail.com
-                </a>
             </div>
-            <div class="contact-method-container" id="contact-method-instagram"></div>
-            <div class="contact-method-container" id="contact-method-linkedIn">
-                <div class="icon">
-                    <i class="icon-linkedin">
-                    </i>
+            <!-- Frameworks -->
+            <div class="content">
+                <h1>
+                    Frameworks
+                </h1>
+                <!-- scrolling list of items -->
+                <div class="scrolling-list">
+                    <div class="item">
+                        <img src="../assets/skills/Frameworks/flask.png" alt="Flask">
+                        <span>Flask</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="Keras">
+                        <span>Keras</span>
+                    </div>
+                    <div class="item">
+                        <img src="path_to_python_icon" alt="Tensor Flow">
+                        <span>Tensor Flow</span>
+                    </div>
+                    <!-- Add more items as needed -->
                 </div>
-                <h4>
-                    Let's Connect
-                </h4>
-                <a href="www.linkedin.com/in/suryansh-khranger-1806b5249">
-                    LinkedIn Profile
-                </a>
             </div>
-        </div>
-    </div>
+            <!-- Other -->
+            <div class="content">
+                <h1>
+                    Other
+                </h1>
+                <!-- scrolling list of items -->
+                <div class="scrolling-list">
+                    <div class="item">
+                        <img src="../assets/skills/Other/git.png" alt="Git">
+                        <span>Git</span>
+                    </div>
+                    <div class="item">
+                        <img src="../assets/skills/Other/github.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                    <!-- Add more items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Education</h1>
+            </div>
+            <!-- Section Content -->
+            <div class="content">
+                <h1>
+                    University of Alberta
+                </h1>
+                <div>
+                    Edmonton, Alberta, Canada
+                </div>
+                <div class="education-program">
+                    <strong>Degree: </strong> Bachelor of Science in Computing Science, Specialization in Artificial Intelligence
+                </div>
+                <div class="grade">
+
+                </div>
+            </div>
+            <div class="content">
+                <h1>
+                    Lillian Osborne High School
+                </h1>
+                <div>
+                    Edmonton, Alberta, Canada
+                </div>
+                <div class="education-program">
+                    <strong>Program: </strong> International Baccalaureate Diploma Program
+                </div>
+                <div class="grade">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Contact</h1>
+            </div>
+            <!-- Section Content -->
+            <div class="content">
+                
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume">
+            <!-- Section Header -->
+            <div class="banner">
+                <h1>Resume</h1>
+            </div>
+            <!-- Section Content -->
+            <div class="content">
+                
+            </div>
+        </section>
+
+        <footer>
+            <div class="credits">
+                <h3>Icon Credits</h3>           <!-- using non copy-right ones -->
+                <!-- source: https://uxwing.com -->
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+
+
+
+
 </html>
