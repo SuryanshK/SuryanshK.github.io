@@ -476,7 +476,6 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     height: 52%;
     padding: 0;
     border-radius: 8px 8px 0 0;
-    /* background: url(../assets/website-img.png); */
     background-size: cover;
     margin: 0 0 0 0;
 }

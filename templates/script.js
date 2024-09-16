@@ -65,9 +65,9 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
             '../assets/project_images_videos/ToDo_List/ToDo_List_screenshot1.png',
             '../assets/project_images_videos/Client_interaction_Trackers_screenshot_1.png',
             '../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png',       // TODO: change this...
-            // Add URLs for each project's background image
             '../assets/website-img.png',
-            'url/to/your/image5.jpg',
+            '../assets/project_images_videos/Immigration_Assistant/Immigration_Assistant_screenshot 1.png',
+            // Add URLs for each project's background image
             'url/to/your/image6.jpg',
         ];
         const videoURLS = [
@@ -91,6 +91,7 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
         };
         
         // Customize the content of the overlay-content based on the data
+        console.log(projectData.imageUrl);
         overlayContent.innerHTML = `
             <div class="project-extended-display-images-banner" style="background-image: url(${projectData.imageUrl});"></div>
             <div class="project-extended-display-details">
