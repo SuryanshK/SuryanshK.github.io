@@ -61,13 +61,12 @@ document.querySelectorAll('.project-container').forEach((item, index) => {
         overlayContent.innerHTML = '';
         
         // Define an array of image URLs for each project
-        const imageUrls = [                     // These are displayed in the overlay screen
+        const imageUrls = [                                                                 // These are displayed in the background of the overlay screen
             '../assets/project_images_videos/ToDo_List/ToDo_List_screenshot1.png',
             '../assets/project_images_videos/Client_interaction_Trackers_screenshot_1.png',
-            '../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png',       // TODO: change this...
+            '../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png',              // TODO: maybe use a different image here
             '../assets/website-img.png',
-            '../assets/project_images_videos/Immigration_Assistant/Immigration_Assistant_screenshot 1.png',
-            // Add URLs for each project's background image
+            '../assets/project_images_videos/Immigration_Assistant/Immigration_Assistant_screenshot_1.png',
             'url/to/your/image6.jpg',
         ];
         const videoURLS = [
