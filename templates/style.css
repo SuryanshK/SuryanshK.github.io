@@ -430,13 +430,15 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     background-image: url(../assets/website-img.png);
 }
 .project-image5 {
-    background-image: url(../assets/);
+    background-image: url(../assets/project_images_videos/Immigration_Assistant/immigration_logo.png);
+    background-size: contain;
+    background-color: white;
 }
 .project-image6 {
     background-image: url(../assets/);
 }
 /* project videos */
-.project-demo-video1 {
+.project-demo-video1, .project-demo-video2, .project-demo-video3, .project-demo-video4, .project-demo-video5, .project-demo-video6 {
     display: none;
 }
 /* click */
