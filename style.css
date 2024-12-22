@@ -435,7 +435,7 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
     background-color: white;
 }
 .project-image6 {
-    background-image: url(assets/project_images_videos/DocuFriend/DocufriendIcon.png);
+    background-image: url(assets/project_images_videos/DocuFriend/DocuFriendIcon.png);
 }
 /* project videos */
 .project-demo-video1, .project-demo-video2, .project-demo-video3, .project-demo-video4, .project-demo-video5, .project-demo-video6 {

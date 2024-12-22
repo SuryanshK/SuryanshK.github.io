@@ -73,7 +73,7 @@ document.querySelectorAll(".project-container").forEach((item, index) => {
       "assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png", // TODO: maybe use a different image here
       "assets/website-img.png",
       "assets/project_images_videos/Immigration_Assistant/Immigration_Assistant_screenshot_1.png",
-      "assets/project_images_videos/DocuFriend/DocufriendIcon.png",
+      "assets/project_images_videos/DocuFriend/DocuFriendIcon.png",
     ];
     const videoURLS = [
       "assets/project_images_videos/ToDo_List_recording.mov",
