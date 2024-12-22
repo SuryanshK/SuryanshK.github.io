@@ -2,7 +2,7 @@ header {
     position: relative;
     min-height: 820px;
     width: 100%;
-    background: url(../assets/Alpines.jpeg);
+    background: url(assets/Alpines.jpeg);
     -webkit-background-size: cover !important;
     background-size: cover;
     text-align: center;
@@ -418,24 +418,24 @@ ul#nav li.current a {                               /* a tags under nav; the CUR
 }
 /* project background images */
 .project-image1 {
-    background-image: url(../assets/project_images_videos/ToDo_List/to_do_icon.png);
+    background-image: url(assets/project_images_videos/ToDo_List/to_do_icon.png);
 }
 .project-image2 {
-    background-image: url(../assets/project_images_videos/interaction_icon.png);
+    background-image: url(assets/project_images_videos/interaction_icon.png);
 }
 .project-image3 {
-    background-image: url(../assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png);
+    background-image: url(assets/project_images_videos/Nutrilens_AI/nutrilens-logo.png);
 }
 .project-image4 {
-    background-image: url(../assets/website-img.png);
+    background-image: url(assets/website-img.png);
 }
 .project-image5 {
-    background-image: url(../assets/project_images_videos/Immigration_Assistant/immigration_logo.png);
+    background-image: url(assets/project_images_videos/Immigration_Assistant/immigration_logo.png);
     background-size: contain;
     background-color: white;
 }
 .project-image6 {
-    background-image: url(../assets/project_images_videos/DocuFriend/DocufriendIcon.png);
+    background-image: url(assets/project_images_videos/DocuFriend/DocufriendIcon.png);
 }
 /* project videos */
 .project-demo-video1, .project-demo-video2, .project-demo-video3, .project-demo-video4, .project-demo-video5, .project-demo-video6 {
