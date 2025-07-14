@@ -47,8 +47,9 @@ const projects = [
         featured: false,
     },
     {
-        title: 'Mobile Fitness Tracker',
-        description: 'Cross-platform mobile app for fitness tracking with social features and personalized workout recommendations.',
+        title: 'Immigration Assistant',
+        description: 'Created a mobile application using react-native for an immigration firm with features including score calculations, document checklistts, and dynamic newsfeeds.',
+        // TODO: put this in
         image: 'https://images.pexels.com/photos/4164856/pexels-photo-4164856.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['React Native', 'Firebase', 'Redux', 'Node.js'],
         github: '#',

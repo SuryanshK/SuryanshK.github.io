@@ -29,7 +29,7 @@ const ContactForm = () => {
     };
 
     return (
-        <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-300">
+        <Card className="h-full flex flex-col bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-300">
             <CardHeader>
                 <CardTitle className="text-2xl font-bold text-cyan-400">Send me a message</CardTitle>
             </CardHeader>
@@ -155,62 +155,37 @@ const ContactInfo = () => {
     ];
 
     return (
-        <div className="space-y-8">
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-purple-400">Get in touch</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                        I'm always open to discussing new opportunities, interesting projects,
-                        or just having a conversation about technology. Feel free to reach out!
-                    </p>
+        <Card className="h-full flex flex-col bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-300">
+            <CardHeader>
+                <CardTitle className="text-2xl font-bold text-purple-400">Get in touch</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                    I'm always open to discussing new opportunities, interesting projects,
+                    or just having a conversation about technology. Feel free to reach out!
+                </p>
 
-                    <div className="space-y-4">
-                        {contactDetails.map((detail) => (
-                            <a
-                                key={detail.label}
-                                href={detail.href}
-                                className="flex items-center space-x-3 group hover:bg-accent/50 p-3 rounded-lg transition-all duration-200"
-                            >
-                                <div className={`p-2 rounded-lg bg-gradient-to-r from-cyan-500/20 to-purple-500/20 group-hover:scale-110 transition-transform`}>
-                                    <detail.icon className={`h-5 w-5 ${detail.color}`} />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-muted-foreground">{detail.label}</p>
-                                    <p className="font-medium text-foreground group-hover:text-cyan-400 transition-colors">
-                                        {detail.value}
-                                    </p>
-                                </div>
-                            </a>
-                        ))}
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-orange-400">Connect with me</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <div className="flex space-x-4">
-                        {socialLinks.map((social) => (
-                            <a
-                                key={social.label}
-                                href={social.href}
-                                className={`p-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-purple-500/20 ${social.color} hover:scale-110 transition-all duration-300 group`}
-                                title={social.label}
-                            >
-                                <social.icon className="h-6 w-6" />
-                            </a>
-                        ))}
-                    </div>
-                    <p className="text-sm text-muted-foreground mt-4">
-                        Follow me for updates on my latest projects and tech insights
-                    </p>
-                </CardContent>
-            </Card>
-        </div>
+                <div className="space-y-4">
+                    {contactDetails.map((detail) => (
+                        <a
+                            key={detail.label}
+                            href={detail.href}
+                            className="flex items-center space-x-3 group hover:bg-accent/50 p-3 rounded-lg transition-all duration-200"
+                        >
+                            <div className={`p-2 rounded-lg bg-gradient-to-r from-cyan-500/20 to-purple-500/20 group-hover:scale-110 transition-transform`}>
+                                <detail.icon className={`h-5 w-5 ${detail.color}`} />
+                            </div>
+                            <div>
+                                <p className="text-sm text-muted-foreground">{detail.label}</p>
+                                <p className="font-medium text-foreground group-hover:text-cyan-400 transition-colors">
+                                    {detail.value}
+                                </p>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </CardContent>
+        </Card>
     );
 };
 
@@ -227,11 +202,11 @@ export default function Contact() {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12">
-                    <div style={{ animation: 'fadeInUp 0.6s ease-out forwards' }}>
+                <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+                    <div className="h-full" style={{ animation: 'fadeInUp 0.6s ease-out forwards' }}>
                         <ContactForm />
                     </div>
-                    <div style={{ animationDelay: '200ms', animation: 'fadeInUp 0.6s ease-out forwards' }}>
+                    <div className="h-full" style={{ animationDelay: '200ms', animation: 'fadeInUp 0.6s ease-out forwards' }}>
                         <ContactInfo />
                     </div>
                 </div>

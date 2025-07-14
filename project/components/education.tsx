@@ -3,6 +3,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Award, BookOpen } from 'lucide-react';
+import * as Accordion from '@radix-ui/react-accordion';
+import { ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 
 const education = [
     {
@@ -57,19 +60,25 @@ const certifications = [
         name: 'AWS Certified Cloud Practitioner',
         issuer: 'Amazon Web Services',
         date: 'March 2023',
-        status: 'Active'
+        status: 'Active',
+        image: '/assets/AWS-logo.png',
+        description: 'Demonstrates cloud fluency and foundational AWS knowledge.',
     },
     {
         name: 'Google IT Support Professional Certificate',
         issuer: 'Google',
         date: 'January 2023',
-        status: 'Active'
+        status: 'Active',
+        image: '/assets/Google.jpg',
+        description: 'Demonstrated competency in Google Information Technology',
     },
     {
         name: 'Leaders in Training',
         issuer: 'City of Edmonton',
         date: 'July 2022',
-        status: 'Active'
+        status: 'Active',
+        image: '/assets/LeadersInTrainingLogo.jpeg',
+        description: 'Government Youth Leadership Initiative Program',
     },
 ];
 
@@ -169,6 +178,12 @@ const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], in
 );
 
 export default function Education() {
+    // Track the currently open accordion item
+    const [open, setOpen] = useState<string | undefined>(certifications[0]?.name);
+
+    // Find the image for the currently open item
+    const activeCert = certifications.find(cert => cert.name === open);
+
     return (
         <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-background via-background to-muted/20" id="education" >
             < div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" >
@@ -200,22 +215,74 @@ export default function Education() {
                     </div>
                 </div>
 
-                <div>
+                <div className="w-full">
                     <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-orange-400 to-cyan-400 bg-clip-text text-transparent">
                         Professional Certifications
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {certifications.map((cert, index) => (
-                            <div
-                                key={cert.name}
-                                style={{
-                                    animationDelay: `${(index + 2) * 150}ms`,
-                                    animation: 'fadeInUp 0.6s ease-out forwards'
-                                }}
-                            >
-                                <CertificationCard cert={cert} index={index} />
+                    {/* Container */}
+                    <div className="w-full flex flex-col md:flex-row items-stretch justify-center min-h-[350px] max-h-[450px] overflow-hidden">
+
+                        {/* Left: Fixed-size image area */}
+                        <div className="md:w-1/2 w-full bg-gradient-to-br from-cyan-500/10 to-purple-500/10 flex items-center justify-center p-4">
+                            <div className="w-full h-full max-h-[400px] flex items-center justify-center">
+                                {activeCert && (
+                                    <img
+                                        src={activeCert.image}
+                                        alt={activeCert.name}
+                                        className="w-full h-full object-contain rounded-xl shadow-2xl transition-all duration-300"
+                                    />
+                                )}
                             </div>
-                        ))}
+                        </div>
+                        {/* Right: Accordion */}
+                        <div className="md:w-1/2 w-full flex flex-col justify-center">
+                            <Accordion.Root
+                                type="single"
+                                collapsible
+                                value={open}
+                                onValueChange={setOpen}
+                                className="w-full space-y-0"
+                            >
+                                {certifications.map((cert) => (
+                                    <Accordion.Item
+                                        key={cert.name}
+                                        value={cert.name}
+                                        className="border border-border/50 rounded-lg overflow-hidden bg-card/50 backdrop-blur-sm"
+                                    >
+                                        <Accordion.Header>
+                                            <Accordion.Trigger className="flex w-full items-center justify-between px-8 py-6 text-xl font-semibold text-left transition-colors hover:bg-accent/30 group">
+                                                <span>
+                                                    {cert.name}
+                                                    <span className="block text-base font-normal text-muted-foreground">
+                                                        {cert.issuer}
+                                                    </span>
+                                                </span>
+                                                <ChevronDown
+                                                    className="h-6 w-6 ml-2 transition-transform duration-200 group-data-[state=open]:rotate-180"
+                                                    aria-hidden
+                                                />
+                                            </Accordion.Trigger>
+                                        </Accordion.Header>
+                                        <Accordion.Content className="px-8 pb-6 pt-0 text-muted-foreground data-[state=open]:animate-slide-down data-[state=closed]:animate-slide-up text-lg">
+                                            <div className="flex items-center text-base mb-2">
+                                                <Calendar className="h-5 w-5 mr-2 text-orange-400" />
+                                                <span>Issued: {cert.date}</span>
+                                            </div>
+                                            <div>
+                                                <span className="inline-block rounded bg-gradient-to-r from-green-500/20 to-blue-500/20 border-green-500/40 text-green-300 px-3 py-1 text-sm font-medium">
+                                                    {cert.status}
+                                                </span>
+                                            </div>
+                                            {cert.description && (
+                                                <div className="mt-3 text-base text-muted-foreground">
+                                                    {cert.description}
+                                                </div>
+                                            )}
+                                        </Accordion.Content>
+                                    </Accordion.Item>
+                                ))}
+                            </Accordion.Root>
+                        </div>
                     </div>
                 </div>
             </div >
