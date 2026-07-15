@@ -5,15 +5,16 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink, Star } from 'lucide-react';
 
+const isValidLink = (url: string) => url.startsWith('http://') || url.startsWith('https://');
+
 const projects = [
     {
         title: 'Nutrilens AI',
         description: 'A mobile application built using react native, featuring user AI-powered image processing and analysis of nutritional labels.',
         image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['Python', 'React Native', 'Stripe', 'PostgreSQL'],
-        // TODO: put this in
-        github: '#',
-        demo: '#',
+        github: 'https://github.com/SuryanshK/Nutrilens-AI-app-portfolio',
+        demo: 'https://nutrilensai.io',
         featured: true,
     },
     {
@@ -21,9 +22,9 @@ const projects = [
         description: 'Real-time Property Listing AI-powered analysis using OpenAI API integration, featuring secure payment through Stripe.',
         image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['NextJS', 'Node.js', 'Socket.io', 'OpenAI API', 'Postgress'],
+        // TODO: make this redirect to a github repo outlining and explaining the project
         github: '#',
-        // TODO: put this in
-        demo: '#https://real-estate-ai-one.vercel.app',
+        demo: 'https://real-estate-ai-one.vercel.app',
         featured: true,
     },
     {
@@ -31,8 +32,9 @@ const projects = [
         description: 'Collaborative project management tool with real-time updates, kanban boards, and team collaboration features.',
         image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['Vue.js', 'Express', 'PostgreSQL', 'Redis', 'Docker'],
-        // TODO: put this in
+        // TODO: make this redirect to a github repo outlining and explaining the project
         github: '#',
+        // TODO: make this redirect to a video tutorial or product page if released
         demo: '#',
         featured: false,
     },
@@ -41,8 +43,9 @@ const projects = [
         description: 'Desktop Application with SSL for file sharing, prioritizing privacy, security, and offline functionality',
         image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['React', 'NodeJS', 'Electron.js', 'electron-store'],
-        github: '#https://github.com/SuryanshK/Client_Document_Manager/tree/main',
-        // TODO: put this in
+        // TODO: make this redirect to a github repo outlining and explaining the project... right now it redirects to the actual repo which is private, so needs fixing
+        github: 'https://github.com/SuryanshK/Client_Document_Manager/tree/main',
+        // TODO: make this redirect to a video tutorial or product page if released
         demo: '#',
         featured: false,
     },
@@ -52,7 +55,9 @@ const projects = [
         // TODO: put this in
         image: 'https://images.pexels.com/photos/4164856/pexels-photo-4164856.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['React Native', 'Firebase', 'Redux', 'Node.js'],
+        // TODO: make this redirect to a github repo outlining and explaining the project
         github: '#',
+        // TODO: make this redirect to a video tutorial or product page if released
         demo: '#',
         featured: false,
     },
@@ -61,7 +66,9 @@ const projects = [
         description: 'Secure and transparent voting system using blockchain technology with smart contracts and voter verification.',
         image: 'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'IPFS'],
+        // TODO: make this redirect to a github repo outlining and explaining the project
         github: '#',
+        // TODO: make this redirect to a video tutorial or product page if released
         demo: '#',
         featured: true,
     },
@@ -111,21 +118,50 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
             </div>
 
             <div className="flex space-x-3 pt-2">
-                <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                </Button>
-                <Button
-                    size="sm"
-                    className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white transition-all duration-300"
-                >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                </Button>
+                {isValidLink(project.github) ? (
+                    <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                    >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                        </a>
+                    </Button>
+                ) : (
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        disabled
+                        className="border-cyan-400/50 text-cyan-400 transition-all duration-300"
+                    >
+                        <Github className="mr-2 h-4 w-4" />
+                        Code
+                    </Button>
+                )}
+                {isValidLink(project.demo) ? (
+                    <Button
+                        asChild
+                        size="sm"
+                        className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white transition-all duration-300"
+                    >
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Demo
+                        </a>
+                    </Button>
+                ) : (
+                    <Button
+                        size="sm"
+                        disabled
+                        className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white transition-all duration-300"
+                    >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        Demo
+                    </Button>
+                )}
             </div>
         </CardContent>
     </Card>

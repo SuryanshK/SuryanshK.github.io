@@ -1,8 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import { ChevronDown, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+
+const RESUME_PATH = '/assets/most_recent_resume/Suryansh Resume - Backend Java Developer.pdf';
 
 const HeroSection = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -149,12 +152,16 @@ const HeroSection = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                    <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                        <Download className="mr-2 h-5 w-5" />
-                        Download Resume
+                    <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <a href={RESUME_PATH} download="Suryansh Resume - Backend Java Developer.pdf">
+                            <Download className="mr-2 h-5 w-5" />
+                            Download Resume
+                        </a>
                     </Button>
-                    <Button variant="outline" size="lg" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                        View Projects
+                    <Button asChild variant="outline" size="lg" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
+                        <Link href="#projects">
+                            View Projects
+                        </Link>
                     </Button>
                 </div>
 
