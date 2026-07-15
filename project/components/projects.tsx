@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink, Star } from 'lucide-react';
 
 const isValidLink = (url: string) => url.startsWith('http://') || url.startsWith('https://');
+const myGithubURL = 'https://github.com/SuryanshK';
 
 const projects = [
     {
@@ -22,8 +23,7 @@ const projects = [
         description: 'Real-time Property Listing AI-powered analysis using OpenAI API integration, featuring secure payment through Stripe.',
         image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=500',
         technologies: ['NextJS', 'Node.js', 'Socket.io', 'OpenAI API', 'Postgress'],
-        // TODO: make this redirect to a github repo outlining and explaining the project
-        github: '#',
+        github: 'https://github.com/SuryanshK/Realtor-AI-App-Portfolio/tree/main',
         demo: 'https://real-estate-ai-one.vercel.app',
         featured: true,
     },
@@ -200,8 +200,11 @@ export default function Projects() {
                         size="lg"
                         className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
                     >
-                        <Github className="mr-2 h-5 w-5" />
-                        View All on GitHub
+
+                        <a href={myGithubURL} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                            <Github className="mr-4 h-5 w-5" />
+                            View all
+                        </a>
                     </Button>
                 </div>
             </div>
